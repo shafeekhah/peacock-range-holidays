@@ -1,0 +1,156 @@
+// Add custom variables for use in style-variables.less
+
+/** Helper classes **/
+
+.icon-reset {
+    display: inline;
+    color: #4f4f4f;
+    font-size: 14px;
+    font-family: "FontAwesome";
+    font-weight: 400;
+    font-style: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+textarea {
+    height: auto !important;
+}
+
+ul {
+    &.list-ul {
+        margin: 0;
+        padding: 0;
+    }
+}
+.list-style {
+    li {
+        list-style: none;
+    }
+}
+
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+@text-color: #666;
+@text-color-2: #2d2c2c;
+@menu-hover: #0dc96b;
+
+//== Scaffolding
+//
+//## Settings for some of the most global styles.
+
+//** Background color for `<body>`.
+@body-bg: #fff;
+
+//== Typography
+//
+@font-size-base: 13px;
+@font-weight-base: 400;
+@line-height-base: 1.714; // 24/14
+@font-family-roboto: "Roboto", sans-serif, Helvetica, Arial;
+
+@font-size-h1: floor((@font-size-base * 2.462)); // ~32px
+@font-size-h2: floor((@font-size-base * 2.154)); // ~28px
+@font-size-h3: ceil((@font-size-base * 1.923)); //  ~25px
+@font-size-h4: ceil((@font-size-base * 1.615)); //  ~21px
+@font-size-h5: ceil((@font-size-base * 1.308)); //  ~17px
+@font-size-h6: ceil((@font-size-base * 1.077)); //  ~14px
+
+
+@brand-primary: #04703a;
+@headings-font-weight: 600;
+@headings-color: @brand-primary;
+@text-decoration:none;
+@clear-right: right;
+
+
+//** Global
+@link-color: @brand-primary;
+@link-hover-color: @link-color;
+@text-decoration-none: none;
+@link-decoration-underline: underline;
+@link-outline-none: none;
+
+
+//* form control
+@input-border-radius: 0;
+@box-shadow: none;
+
+//== Breadcrumbs
+//
+//##
+@breadcrumb-padding-vertical: 12px;
+@breadcrumb-padding-horizontal: 0;
+//** Breadcrumb background color
+@breadcrumb-bg: transparent;
+//** Breadcrumb text color
+@breadcrumb-color: #000;
+//** Text color of current page in the breadcrumb
+@breadcrumb-active-color: #04703a;
+//** Textual separator for between breadcrumb elements
+@breadcrumb-separator: ">";
+
+//
+// Typography
+// --------------------------------------------------
+
+// Headings
+// -------------------------
+
+h1, .h1 { font-size: @font-size-h1; }
+h2, .h2 { font-size: @font-size-h2; }
+h3, .h3 { font-size: @font-size-h3; }
+h4, .h4 { font-size: @font-size-h4; }
+h5, .h5 { font-size: @font-size-h5; }
+h6, .h6 { font-size: @font-size-h6; }
+
+a {
+    outline: @link-outline-none;
+    color: @text-color-2;
+    text-decoration: @text-decoration-none;
+}
+a:focus, a:hover {
+    color: @brand-primary;
+}
+a:link, a:visited {
+    outline: @link-outline-none;
+    text-decoration: @text-decoration-none;
+}
+a:active, a:focus, a:hover {
+    color: @brand-primary;
+    text-decoration: @link-decoration-underline;
+}
+
+.box-shadow (@box-shadow:0px 4px 10px 0px rgba(51,51,51,.50)) {
+	box-shadow:@box-shadow;
+	-moz-box-shadow:@box-shadow;
+	-webkit-box-shadow:@box-shadow;
+	-o-box-shadow:@box-shadow;
+	-ms-box-shadow:@box-shadow;
+}
+
+.transitions (@transitions:all .5s ease-in-out) {
+    transition:@transitions;
+    -moz-transition:@transitions;
+    -webkit-transition:@transitions;
+    -o-transition:@transitions;
+    -ms-transition:@transitions;
+}
+
+.transforms (@transforms:translateX(-75%)) {
+    transform:@transforms;
+    -moz-transform:@transforms;
+    -webkit-transform:@transforms;
+    -o-transform:@transforms;
+    -ms-transform:@transforms;
+}
+
+.border-radius (@border-radius:30px) {
+  border-radius: @border-radius;
+  -moz-border-radius: @border-radius;
+  -webkit-border-radius: @border-radius;
+  -o-border-radius: @border-radius;
+  -ms-border-radius: @border-radius;
+}

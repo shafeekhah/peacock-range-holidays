@@ -1,0 +1,648 @@
+/**
+ * Custom styles for this site
+*/
+
+@import "bootstrap.min.css";
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+// Load custom variables
+// --------------------------------------------------
+@import "style-variables.less";
+
+body {
+    color: @text-color;
+    font-family: @font-family-roboto;
+    font-size: @font-size-base;
+    font-weight: @font-weight-base;
+    line-height: @line-height-base;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #178c6e;
+    font-weight: 700;
+}
+
+.more-btn-home {
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: capitalize;
+    &:hover {
+        color: @brand-primary;
+        text-decoration: none;
+    }
+}
+
+.more-btn {
+    border-bottom: solid 2px #000;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    &:hover {
+        border-bottom: solid 2px @brand-primary;
+        color: @brand-primary;
+        text-decoration: none;
+    }
+}
+
+/** Header **/
+.main-nav {
+    .transitions();
+    &.active {
+        background: #082f25;
+        padding-top: 5px!important;
+        .transitions();
+        &:hover {
+            .dropdown-menu {
+                margin-top: 19px;
+            }
+        }
+    }
+    .navbar-brand {
+        img {
+            width: auto;
+            height: 50px;
+        }
+    }
+    .navbar-nav {
+        li {
+            margin-right: 30px;
+            font-weight: 600;
+            &:last-child {
+                margin: 0;
+            }
+            &:hover {
+                a {
+                    color: @menu-hover !important;
+                }
+            }
+            a {
+                &:hover, &.active {
+                    background: transparent;
+                    color: @menu-hover;
+                }
+            }
+            .dropdown-toggle {
+                &:after {
+                    .icon-reset();
+                    content: "\f078";
+                    margin-left: 6px;
+                    color: inherit;
+                    font-size: 9px;
+                    border: 0;
+                    vertical-align: 1px;
+                }
+            }
+            &.dropdown {
+                .dropdown-menu {
+                    display: block;
+                    border-top: solid 3px @menu-hover;
+                    margin-top: 19px;
+                    opacity: 0;
+                    visibility: hidden;
+                    li {
+                        margin: 0;
+                        font-size: 13px;
+                        a {
+                            padding-top: 8px;
+                            padding-bottom: 8px;
+                        }
+                    }
+                }
+                &:hover {
+                    .dropdown-menu {
+                        visibility: visible;
+                        opacity: 1;
+                        &:before {
+                            position: absolute;
+                            bottom: 100%;
+                            content: "";
+                            width: 100%;
+                            height: 21px;
+                        }
+                        li {
+                            a {
+                                color: #212529 !important;
+                                &:hover {
+                                    color: @menu-hover !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+}
+/** Header **/
+
+/** Banner **/
+.banner {
+    .item {
+        &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            width: 100%;
+        }
+    }
+    .carousel-bg {
+        height: 720px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        overflow: hidden;
+    }
+    .banner-holder {
+        padding-top: 229px;
+        padding-bottom: 275px;
+        position: relative;
+        .banner-title {
+            color: #fff;
+            font-size: 41px;
+            font-weight: 900;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+    }
+}
+.banner-cover {
+    position: absolute;
+    bottom: -1px;
+    z-index: 99;
+    width: 100%;
+    left: 0;
+    right: 0;
+}
+/** Banner **/
+
+/** Packages section **/
+.packages-section {
+    .package-card {
+        bottom: 5%;
+        right: 15%;
+        max-width: 450px;
+        .pack-title {
+            color: #178c6e;
+            font-size: 18px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+    }
+    .item {
+        img {
+            height: 400px;
+        }
+    }
+    .owl-carousel {
+        .owl-nav {
+            position: absolute;
+            bottom: 0;
+            margin: 0;
+            .owl-prev, .owl-next {
+                margin: 0 !important;
+                background: #fff;
+                opacity: 1;
+                .border-radius(@border-radius:0);
+                &:hover {
+                    background: #fff;
+                }
+                span {
+                    display: block;
+                    width: 35px;
+                    height: 45px;
+                    color: #169b79;
+                    font-size: 51px;
+                    line-height: 40px;
+                }
+            }
+        }
+    }
+}
+/** Packages section **/
+
+/** Day tours section **/
+.day-tours-section {
+    min-height: 800px;
+    background: url(../img/Home-3rd-pic.png) top center no-repeat;
+    background-size: cover;
+    .item {
+        .title {
+            margin-top: 15px;
+            color: #000;
+            font-size: 17px;
+            font-weight: 600;
+            &:hover {
+                color: @brand-primary;
+            }
+        }
+    }
+    .owl-carousel {
+        .owl-nav {
+            position: absolute;
+            top: 30%;
+            width: 100%;
+            margin: 0;
+            .owl-prev, .owl-next {
+                position: absolute;
+                opacity: 1;
+                &:hover {
+                    background: transparent;
+                }
+                span {
+                    color: #169b79;
+                    font-size: 50px;
+                }
+            }
+            .owl-prev {
+                left: -35px;
+            }
+            .owl-next {
+                right: -35px;
+            }
+        }
+    }
+}
+/** Day tours section **/
+
+/** Activities section **/
+.activities-section {
+    background: url(../img/Home-4th-pic.png) center top no-repeat;
+    background-size: cover;
+    margin-top: -220px;
+    padding: 15% 0 20% 0;
+    h1 {
+        color: #fff;
+    }
+}
+/** Activities section **/
+
+/** Destinations section **/
+.destinations-section {
+    .item {
+        .bg-dark {
+            background: #274832 !important;
+        }
+        .card-title {
+            font-size: 19px;
+            text-transform: uppercase;
+        }
+        .more-btn {
+            border-bottom: solid 2px #fff;
+            color: #fff;
+            &:hover {
+                border-bottom: solid 2px #75d4a4;
+                color: #75d4a4;
+                text-decoration: none;
+            }
+        }
+    }
+    .owl-carousel {
+        .owl-nav {
+            position: absolute;
+            top: 43%;
+            width: 100%;
+            margin: 0;
+            .owl-prev, .owl-next {
+                position: absolute;
+                width: 50px;
+                height: 50px;
+                margin: 0;
+                opacity: 1;
+                &:hover {
+                    background: transparent;
+                }
+                span {
+                    color: #169b79;
+                    font-size: 50px;
+                }
+            }
+            .owl-prev {
+                left: -50px;
+            }
+            .owl-next {
+                right: -50px;
+            }
+        }
+    }
+}
+/** Destinations section **/
+
+/** Footer **/
+.footer {
+    background: #031f12;
+    .footer-box {
+        .footer-title {
+            border-bottom: solid 1px #fff;
+            font-size: 19px;
+        }
+        ul {
+            li {
+                a {
+                    color: rgba(255, 255, 255, 0.8);
+                    &:hover {
+                        color: @menu-hover;
+                    }
+                }
+            }
+        }
+        iframe {
+            width: 100% !important;
+        }
+    }
+    .footer-contact {
+        font-size: 14px;
+    }
+}
+/** Footer **/
+
+
+/** Inner page **/
+.inner-banner-bg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden;
+    min-height: 550px;
+    &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        width: 100%;
+    }
+    .carousel-caption {
+        bottom: 48%;
+        left: 15%;
+        right: auto;
+        h1 {
+            position: relative;
+            z-index: 999;
+            font-size: 50px;
+        }
+    }
+}
+
+.vision-bg {
+    background: #33a689;
+}
+
+.mission-bg {
+    background: #075e48;
+}
+
+.daytours-page {
+    .daytours-block {
+        &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            width: 100%;
+        }
+        .title {
+            top: 50%;
+            left: 0;
+            right: 0;
+            font-size: 15px;
+            font-weight: 800;
+        }
+    }
+}
+
+.modal {
+    .modal-header-bg {
+        background: @brand-primary;
+        .modal-title {
+            line-height: 45px;
+        }
+    }
+}
+
+.daytours-modal {
+    form {
+        .form-control {
+            &:focus {
+                .box-shadow(@box-shadow:0 0 0 0.25rem rgba(25,135,64,.25));
+            }
+        }
+    }
+}
+
+/** Inner page **/
+
+/** Responsive start **/
+
+    @media (max-width: 1300px) {
+        .destinations-section {
+            .owl-carousel {
+                .owl-item {
+                    img {
+                        height: 400px;
+                    }
+                }
+                .owl-nav {
+                    .owl-prev {
+                        left: -40px;
+                    }
+                    .owl-next {
+                        right: -40px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1199px) {
+        .banner {
+            .carousel-bg {
+                height: 620px;
+            }
+        }
+    }
+
+    @media (max-width: 991px) {
+        .main-nav {
+            &.mobile-nav-bg {
+                background: #082f25;
+            }
+            .navbar-toggler {
+                border: none;
+                .navbar-toggler-icon {
+                    background: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(13,201,107)' stroke-width='4' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+                }
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+            .navbar-nav {
+                li {
+                    margin: 0;
+                    &.dropdown {
+                        &:hover {
+                            .dropdown-menu {
+                                &:before {
+                                    display: none;
+                                }
+                            }
+                        }
+                        .dropdown-menu {
+                            display: none;
+                            visibility: visible;
+                            opacity: 100;
+                            &.show {
+                                display: block;
+                                margin: 0;
+                            }
+                            li {
+                                a {
+                                    padding-top: 5px;
+                                    padding-bottom: 5px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .banner {
+            .carousel-bg {
+                height: 500px;
+            }
+            .banner-holder {
+                padding-top: 180px;
+            }
+        }
+        .packages-section {
+            .package-card {
+                right: 23px;
+            }
+            .item {
+                img {
+                    height: 300px;
+                }
+            }
+        }
+        .destinations-section {
+            .item {
+                .card {
+                    .card-body {
+                        height: 290px;
+                    }
+                }
+            }
+            .owl-carousel {
+                .owl-item {
+                    img {
+                        height: 400px;
+                    }
+                }
+            }
+        }
+        .footer {
+            .footer-box {
+                .footer-title {
+                    font-size: 17px;
+                }
+            }
+        }
+        .modal {
+            .modal-header-bg {
+                .modal-title {
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        .banner {
+            .carousel-bg {
+                height: 390px;
+            }
+            .banner-holder {
+                padding-top: 170px;
+                .banner-title {
+                    font-size: 27px;
+                }
+            }
+        }
+        .packages-section {
+            .package-card {
+                position: relative !important;
+                bottom: 0;
+                right: 0;
+                max-width: 100%;
+                .card {
+                    border: solid 1px #e3e3e3 !important;
+                    border-top: none !important;
+                    .box-shadow(@box-shadow:none) !important;
+                }
+            }
+            .item {
+                img {
+                    height: auto;
+                }
+            }
+            .owl-carousel {
+                .owl-nav {
+                    right: 0px;
+                    top: 0;
+                    bottom: auto;
+                }
+            }
+        }
+        .destinations-section {
+            .item {
+                .card {
+                    .card-body {
+                        height: auto;
+                    }
+                }
+            }
+            .owl-carousel {
+                .owl-item {
+                    img {
+                        height: auto;
+                    }
+                }
+            }
+        }
+        .inner-banner-bg {
+            min-height: 300px;
+            .carousel-caption {
+                bottom: 28%;
+                left: 5%;
+                right: 5%;
+                h1 {
+                    font-size: 35px;
+                }
+            }
+        }
+        .vision-bg, .mission-bg {
+            .about-icon {
+                width: 150px !important;
+            }
+        }
+        .modal {
+            .modal-header-bg {
+                .modal-title {
+                    font-size: 18px;
+                    line-height: 45px;
+                }
+            }
+        }
+    }
+
+/** Responsive End **/
